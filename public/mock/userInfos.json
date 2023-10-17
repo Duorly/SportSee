@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": 10,
+    "userInfos": {
+      "firstName": "Nebel",
+      "lastName": "Mass",
+      "age": 23
+    },
+    "todayScore": 0.7,
+    "keyData": {
+      "calorieCount": 2500,
+      "proteinCount": 180,
+      "carbohydrateCount": 150,
+      "lipidCount": 70
+    }
+  }
+}
