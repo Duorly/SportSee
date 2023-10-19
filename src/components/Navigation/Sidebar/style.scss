@@ -1,0 +1,50 @@
+@import "@/assets/scss/utils/variables";
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: $colorPrimary;
+    width: 117px;
+
+    .icons {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 150px;
+
+        i {
+            display: flex;
+            justify-content: center;
+            min-width: 64px;
+            min-height: 64px;
+            border-radius: 6px;
+            background-color: $bgWhite;
+            cursor: pointer;
+
+            img {
+                max-width: 32px;
+                max-width: 32px;
+            }
+        }
+    }
+
+    .copyright {
+        position: absolute;
+        z-index: -2;
+        bottom: 175px;
+        width: 150px;
+        transform: rotate(270deg);
+        font-style: normal;
+        font-weight: $fontWeight;
+        font-size: 12px;
+        color: $colorSecondary;
+    }
+}
