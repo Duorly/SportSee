@@ -1,7 +1,9 @@
+import { Header } from "@/components/Navigation/Header"
+
 export const Home = () => {
     return (
-        <div>
-            Salut
-        </div>
+        <>
+            <Header />
+        </>
     )
 }
