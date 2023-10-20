@@ -1,0 +1,26 @@
+@import "@/assets/scss/utils/variables";
+
+.loader {
+    color: red;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+        content: ".";
+        font-size: 220px;
+        animation: rotation 1.5s infinite forwards;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        } 
+}

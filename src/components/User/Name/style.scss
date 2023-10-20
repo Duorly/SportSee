@@ -1,0 +1,32 @@
+@import "@/assets/scss/utils/variables";
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 70px;
+
+    h1 {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+        color: $colorPrimary;
+        font-style: bold;
+        font-weight: $fontWeight + 50;
+        font-size: 48px;
+
+        span {
+            color: $colorThird;
+        }
+    }
+
+    p {
+        display: flex;
+        margin-left: 2px;
+        flex-direction: row;
+        color: $colorPrimary;
+        font-weight: $fontWeight - 100;
+        font-size: 19px;
+    }
+}
