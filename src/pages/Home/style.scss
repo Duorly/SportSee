@@ -5,4 +5,17 @@
     padding-top: 120px;
     padding-left: 150px;
     padding-bottom: 50px;
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            grid-column: span 2 / span 2;
+        }
+    }
 }

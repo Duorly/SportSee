@@ -1,4 +1,5 @@
 import { UserInfosFactory } from "@/factories/UserInfosFactory";
+import { UserActivitiesFactory } from "@/factories/UserActivitiesFactory";
 import { ErrorData } from "@/models/ErrorData";
 
 const appMode = import.meta.env.VITE_APP_ENV;
@@ -47,4 +48,9 @@ async function getData(url: string, Factory: any, apiType: string) {
 export async function fetchUserInfosData() {
     const url = `${baseUrl}${appMode === "local" ? "/userInfos.json" : `/${userId}`}`;
     return getData(url, UserInfosFactory, "api");
+}
+
+export async function fetchActivitiesData() {
+    const url = `${baseUrl}${appMode === "local" ? "/activity.json" : `/${userId}/activity`}`;
+    return getData(url, UserActivitiesFactory, "api");
 }

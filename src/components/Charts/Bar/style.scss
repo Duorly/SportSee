@@ -1,0 +1,60 @@
+@import "@/assets/scss/utils/variables";
+
+.chartBar {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 320px;
+    width: 100%;
+    background-color: $colorFour;
+    font-weight: $fontWeight + 100;
+    padding: 30px;
+    opacity: 0.9;
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+    .description {
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        color: $colorPrimary;
+
+        .legend {
+            margin-right: 10px;
+            font-size: 14px;
+            color: $colorFont;
+
+            &:before {
+                display: inline-flex;
+                content: "";
+                width: 8px;
+                height: 8px;
+                margin-right: 10px;
+                border-radius: 5px;
+                background-color: black;
+            }
+
+            &:nth-child(2):before {
+                background-color: $colorThird;
+            }
+        }
+    }
+
+    .custom-tooltip {
+        background-color: $colorThird;
+        font-size: 12px;
+        color: $colorSecondary;
+        height: 80px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

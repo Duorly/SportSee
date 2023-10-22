@@ -4,6 +4,7 @@ import { UserName } from "@/components/User/Name"
 import { Loader } from "@/components/Utils/Loader";
 import { useGetUserData } from "@/hook/useGetUserData";
 import "./style.scss"
+import { ChartBar } from "@/components/Charts/Bar";
 
 type ApiData = {
     userInfosData: any;
@@ -25,6 +26,12 @@ export const Home = () => {
 
             <div className="container">
                 <UserName name={userInfosData.firstName} />
+
+                <div className="content">
+                    <div className="left-content">
+                        <ChartBar />
+                    </div>
+                </div>
             </div>
         </>
     )

@@ -1,66 +1,66 @@
 import { Infos } from "@/utils/models/Infos";
 
 export class UserInfos {
-    private constructor_id: string;
-    private constructor_firstName: string;
-    private constructor_lastName: string;
-    private constructor_age: number;
-    private constructor_todayScore: number | undefined;
-    private constructor_score: number;
-    private constructor_calorieCount: number;
-    private constructor_proteinCount: number;
-    private constructor_carbohydrateCount: number;
-    private constructor_lipidCount: number;
+    private id: string;
+    private firstName: string;
+    private lastName: string;
+    private age: number;
+    private todayScore?: number;
+    private score: number;
+    private calorieCount: number;
+    private proteinCount: number;
+    private carbohydrateCount: number;
+    private lipidCount: number;
 
     constructor(user: Infos) {
-        this.constructor_id = user.data.id;
-        this.constructor_firstName = user.data.userInfos.firstName;
-        this.constructor_lastName = user.data.userInfos.lastName;
-        this.constructor_age = user.data.userInfos.age;
-        this.constructor_todayScore = user.data.todayScore;
-        this.constructor_score = user.data.score;
-        this.constructor_calorieCount = user.data.keyData.calorieCount;
-        this.constructor_proteinCount = user.data.keyData.proteinCount;
-        this.constructor_carbohydrateCount = user.data.keyData.carbohydrateCount;
-        this.constructor_lipidCount = user.data.keyData.lipidCount;
+        const { data } = user;
+        const { userInfos, todayScore, score, keyData } = data;
+
+        this.id = data.id;
+        this.firstName = userInfos.firstName;
+        this.lastName = userInfos.lastName;
+        this.age = userInfos.age;
+        this.todayScore = todayScore;
+        this.score = score;
+        this.calorieCount = keyData.calorieCount;
+        this.proteinCount = keyData.proteinCount;
+        this.carbohydrateCount = keyData.carbohydrateCount;
+        this.lipidCount = keyData.lipidCount;
     }
 
-    get id(): string {
-        return this.constructor_id;
+    get getId(): string {
+        return this.id;
     }
 
-    get firstName(): string {
-        return this.constructor_firstName;
+    get getFirstName(): string {
+        return this.firstName;
     }
 
-    get lastName(): string {
-        return this.constructor_lastName;
+    get getLastName(): string {
+        return this.lastName;
     }
 
-    get age(): number {
-        return this.constructor_age;
+    get getAge(): number {
+        return this.age;
     }
 
-    get todayScore(): number {
-        if (this.constructor_todayScore) {
-            return this.constructor_todayScore;
-        }
-        return this.constructor_score;
+    get getTodayScore(): number {
+        return this.todayScore || this.score;
     }
 
-    get calorieCount(): number {
-        return this.constructor_calorieCount;
+    get getCalorieCount(): number {
+        return this.calorieCount;
     }
 
-    get proteinCount(): number {
-        return this.constructor_proteinCount;
+    get getProteinCount(): number {
+        return this.proteinCount;
     }
 
-    get carbohydrateCount(): number {
-        return this.constructor_carbohydrateCount;
+    get getCarbohydrateCount(): number {
+        return this.carbohydrateCount;
     }
 
-    get lipidCount(): number {
-        return this.constructor_lipidCount;
+    get getLipidCount(): number {
+        return this.lipidCount;
     }
 }
