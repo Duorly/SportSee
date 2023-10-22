@@ -3,8 +3,9 @@ import { Sidebar } from "@/components/Navigation/Sidebar"
 import { UserName } from "@/components/User/Name"
 import { Loader } from "@/components/Utils/Loader";
 import { useGetUserData } from "@/hook/useGetUserData";
-import "./style.scss"
 import { ChartBar } from "@/components/Charts/Bar";
+import { ChartLine } from "@/components/Charts/Line";
+import "./style.scss"
 
 type ApiData = {
     userInfosData: any;
@@ -30,6 +31,10 @@ export const Home = () => {
                 <div className="content">
                     <div className="left-content">
                         <ChartBar />
+
+                        <div className='charts'>
+                            <ChartLine />
+                        </div>
                     </div>
                 </div>
             </div>
