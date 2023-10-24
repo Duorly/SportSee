@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import {
     fetchActivitiesData,
     fetchSessionsData,
+    fetchPerformanceData,
     fetchUserInfosData,
 } from '@/services/getData'; 
 
 export function useGetUserData() {
     const [activitiesData, setActivitiesData] = useState([]);
     const [sessionsData, setSessionsData] = useState([]);
+    const [performanceData, setPerformanceData] = useState([]);
     const [userInfosData, setUserInfosData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,14 +17,16 @@ export function useGetUserData() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const [activities, sessions, userInfos] = await Promise.all([
+                const [activities, sessions, performance, userInfos] = await Promise.all([
                     fetchActivitiesData(),
                     fetchSessionsData(),
+                    fetchPerformanceData(),
                     fetchUserInfosData(),
                 ]);
 
                 setActivitiesData(activities);
                 setSessionsData(sessions);
+                setPerformanceData(performance);
                 setUserInfosData(userInfos);
 
                 setTimeout(() => {
@@ -37,5 +41,5 @@ export function useGetUserData() {
         fetchData();
     }, []);
 
-    return { activitiesData, sessionsData, userInfosData, loading, error };
+    return { activitiesData, sessionsData, performanceData, userInfosData, loading, error };
 }

@@ -1,0 +1,19 @@
+@import "@/assets/scss/utils/variables";
+
+.chartRadar {
+    display: flex;
+    background: $colorPrimary;
+    border-radius: 5px;
+    height: 263px;
+    opacity: 0.9;
+
+    tspan,
+    .tspan {
+        text-align: left;
+        position: absolute;
+        margin-top: 10%;
+        font-size: 12px;
+        font-weight: $fontWeight;
+        fill: $colorSecondary;
+    }
+}

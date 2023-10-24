@@ -2,6 +2,7 @@ import { UserInfosFactory } from "@/factories/UserInfosFactory";
 import { UserActivitiesFactory } from "@/factories/UserActivitiesFactory";
 import { ErrorData } from "@/models/ErrorData";
 import { UserSessionsFactory } from "@/factories/UserSessionsFactory";
+import { UserPerformanceFactory } from "@/factories/UserPerformanceFactory";
 
 const appMode = import.meta.env.VITE_APP_ENV;
 
@@ -59,4 +60,9 @@ export async function fetchActivitiesData() {
 export async function fetchSessionsData() {
     const url = `${baseUrl}${appMode === "local" ? "/average_sessions.json" : `/${userId}/average-sessions`}`;
     return getData(url, UserSessionsFactory, "api");
+}
+
+export async function fetchPerformanceData() {
+    const url = `${baseUrl}${appMode === "local" ? "/performance.json" : `/${userId}/performance`}`;
+    return getData(url, UserPerformanceFactory, "api");
 }
