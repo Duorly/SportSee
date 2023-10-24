@@ -5,8 +5,9 @@ import { Loader } from "@/components/Utils/Loader";
 import { useGetUserData } from "@/hook/useGetUserData";
 import { ChartBar } from "@/components/Charts/Bar";
 import { ChartLine } from "@/components/Charts/Line";
-import "./style.scss"
 import { ChartRadar } from "@/components/Charts/Radar";
+import { ChartRadial } from "@/components/Charts/Radial";
+import "./style.scss"
 
 type ApiData = {
     userInfosData: any;
@@ -36,6 +37,7 @@ export const Home = () => {
                         <div className='charts'>
                             <ChartLine />
                             <ChartRadar />
+                            <ChartRadial score={userInfosData.todayScore} />
                         </div>
                     </div>
                 </div>

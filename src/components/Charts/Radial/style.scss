@@ -1,0 +1,50 @@
+@import "@/assets/scss/utils/variables";
+
+.chartRadial {
+    position: relative;
+    background: $colorFour;
+    border-radius: 5px;
+    height: 263px;
+    opacity: 0.9;
+
+    .title {
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 24px;
+        color: $colorPrimary;
+        font-size: 15px;
+        font-weight: $fontWeight + 200;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        position: absolute;
+        content: "";
+
+        width: 150px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: -1;
+        background-color: $bgWhite;
+
+        .percentage {
+            font-size: 26px;
+            font-weight: $fontWeight + 200;
+            color: $colorPrimary;
+        }
+
+        .message {
+            font-size: 16px;
+            font-weight: $fontWeight + 100;
+            color: gray;
+            opacity: 0.6;
+        }
+    }
+}
