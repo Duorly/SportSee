@@ -8,6 +8,7 @@ import { ChartLine } from "@/components/Charts/Line";
 import { ChartRadar } from "@/components/Charts/Radar";
 import { ChartRadial } from "@/components/Charts/Radial";
 import { UserCardInfo } from "@/components/User/Infos";
+import { CardInfoType } from "@/utils/models/CardInfo";
 import "./style.scss"
 
 type ApiData = {
@@ -43,10 +44,10 @@ export const Home = () => {
                     </div>
 
                     <div className="card-content">
-                        <UserCardInfo type="Calories" nbGramme={userInfosData.calorieCount} />
-                        <UserCardInfo type="Proteines" nbGramme={userInfosData.proteinCount} />
-                        <UserCardInfo type="Glucides" nbGramme={userInfosData.carbohydrateCount} />
-                        <UserCardInfo type="Lipides" nbGramme={userInfosData.lipidCount} />
+                        <UserCardInfo type={CardInfoType.Calories} nbGramme={userInfosData.calorieCount} />
+                        <UserCardInfo type={CardInfoType.Proteines} nbGramme={userInfosData.proteinCount} />
+                        <UserCardInfo type={CardInfoType.Glucides} nbGramme={userInfosData.carbohydrateCount} />
+                        <UserCardInfo type={CardInfoType.Lipides} nbGramme={userInfosData.lipidCount} />
                     </div>
                 </div>
             </div>
