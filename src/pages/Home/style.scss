@@ -11,7 +11,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
 
-        .left-content {
+        .chart-content {
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -28,5 +28,18 @@
                 }
             }
         }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container .content {
+        display: flex;
     }
 }

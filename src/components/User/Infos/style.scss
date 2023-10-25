@@ -1,0 +1,43 @@
+@import "@/assets/scss/utils/variables";
+
+.card {
+    width: 80%;
+    border-radius: 5px;
+    padding: 32px;
+    background-color: $colorFour;
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: $colorPrimary;
+
+            h3 {
+                font-size: 20px;
+                font-weight: $fontWeight + 200;
+            }
+
+            h4 {
+                color: #74798c;
+                font-size: 14px;
+                font-weight: $fontWeight + 100;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .card {
+        width: 90%;
+    }
+}
