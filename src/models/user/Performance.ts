@@ -6,7 +6,7 @@ import { FormatKindPerformance } from '@/utils/FormatKindPerformance';
 export class UserPerformance {
     private readonly id: string;
     private readonly kind: string;
-    private readonly data: Performance[];
+    private readonly perf_data: Performance[];
 
     private static readonly kindMappings: Record<number, string> = {
         1: 'cardio',
@@ -20,7 +20,7 @@ export class UserPerformance {
     constructor(user: PerfType) {
         this.id = user.data.userId;
         this.kind = user.data.kind;
-        this.data = user.data.data;
+        this.perf_data = user.data.data;
     }
 
     getId(): string {
@@ -31,8 +31,8 @@ export class UserPerformance {
         return this.kind;
     }
 
-    getFormattedData(): Performance[] {
-        return this.data.map((element) => {
+    get data(): Performance[] {
+        return this.perf_data.map((element) => {
             const formattedData = new FormatPerformanceData(element);
             const mappedKind = UserPerformance.kindMappings[formattedData.kind as any] || formattedData.kind;
 
