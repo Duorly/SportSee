@@ -39,7 +39,7 @@ export const Home = () => {
                         <div className='charts'>
                             <ChartLine />
                             <ChartRadar />
-                            <ChartRadial score={userInfosData.todayScore} />
+                            <ChartRadial score={userInfosData.getTodayScore} />
                         </div>
                     </div>
 

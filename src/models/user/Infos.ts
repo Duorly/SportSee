@@ -45,7 +45,7 @@ export class UserInfos {
     }
 
     get getTodayScore(): number {
-        return this.todayScore || this.score;
+        return this.todayScore ?? this.score;
     }
 
     get getCalorieCount(): number {

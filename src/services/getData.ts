@@ -43,11 +43,12 @@ async function getData(url: string, Factory: any, apiType: string) {
 }
 
 function constructUrl(endpoint: string): string {
-    return `${baseUrl}${appMode === "local" ? `/${endpoint}.json` : `/${userId}/${endpoint}`}`;
+    return `${baseUrl}${appMode === "local" ? `/${endpoint}.json` : `/user/${userId}/${endpoint}`}`;
 }
 
 export async function fetchUserInfosData() {
-    const url = constructUrl("userInfos");
+    let endp = appMode === 'local' ? 'userInfos' : '';
+    const url = constructUrl(endp);
     return getData(url, UserInfosFactory, "api");
 }
 
@@ -57,7 +58,7 @@ export async function fetchActivitiesData() {
 }
 
 export async function fetchSessionsData() {
-    const url = constructUrl("average_sessions");
+    const url = constructUrl("average-sessions");
     return getData(url, UserSessionsFactory, "api");
 }
 
