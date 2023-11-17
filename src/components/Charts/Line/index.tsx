@@ -51,8 +51,14 @@ export const ChartLine = () => {
             <ResponsiveContainer width="100%" height="100%">
 
                 <LineChart data={sessions} margin={{ bottom: 10 }} onMouseMove={handleMouseMove} >
-
-                    <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF"
+                    <defs>
+                        <linearGradient id='strokeGradient' x1='0%' y1='0%' x2='100%' y2='0%'>
+                            <stop offset='0%' style={{ stopColor: '#dcdcdc', stopOpacity: 0.5 }} />
+                            <stop offset='100%' style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
+                        </linearGradient>
+                    </defs>
+                    <Line type="monotone" dataKey="sessionLength"
+                          stroke='url(#strokeGradient)'
                         strokeWidth={2.5} dot={false}
                         activeDot={{
                             stroke: "rgba(255, 255, 255, 0.3)",
